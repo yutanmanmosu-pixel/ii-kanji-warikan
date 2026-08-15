@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="いい感じに割り勘">
+  <rect width="64" height="64" rx="14" fill="#20487d" />
+  <g stroke="#ffffff" stroke-width="6" stroke-linecap="round" fill="none">
+    <path d="M20 17 L32 33" />
+    <path d="M44 17 L32 33" />
+    <path d="M32 33 L32 48" />
+    <path d="M21 36 H43" />
+    <path d="M21 43 H43" />
+  </g>
+</svg>
