@@ -13,6 +13,9 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         howTo: resolve(__dirname, 'how-to/index.html'),
+        privacy: resolve(__dirname, 'privacy/index.html'),
+        terms: resolve(__dirname, 'terms/index.html'),
+        faq: resolve(__dirname, 'faq/index.html'),
       },
     },
   },
