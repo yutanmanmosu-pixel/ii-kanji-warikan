@@ -9,6 +9,7 @@ import { RoundingSelect } from './components/RoundingSelect';
 import { UI } from './constants/messages';
 import { useSplitForm } from './hooks/useSplitForm';
 import { calculateSplit } from './lib/split';
+import { AdMaxAd } from './components/AdMaxAd';
 
 export default function App() {
   const form = useSplitForm();
@@ -120,6 +121,7 @@ export default function App() {
           計算ボタンや結果の操作ボタンから離れているため誤タップしにくく、
           高さを固定すれば CLS も抑えられる。
         */}
+        <AdMaxAd />
       </main>
 
       <Footer />

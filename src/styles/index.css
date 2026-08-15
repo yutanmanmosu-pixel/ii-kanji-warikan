@@ -838,3 +838,12 @@ textarea {
     scroll-behavior: auto !important;
   }
 }
+
+.adSlot {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 250px;
+  margin: 32px auto 16px;
+  overflow: hidden;
+}
