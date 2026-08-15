@@ -16,6 +16,8 @@ export default defineConfig({
         privacy: resolve(__dirname, 'privacy/index.html'),
         terms: resolve(__dirname, 'terms/index.html'),
         faq: resolve(__dirname, 'faq/index.html'),
+        companyParty: resolve(__dirname, 'examples/company-party/index.html'),
+        late: resolve(__dirname, 'examples/late/index.html'),
       },
     },
   },
