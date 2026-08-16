@@ -10,6 +10,7 @@ import { UI } from './constants/messages';
 import { useSplitForm } from './hooks/useSplitForm';
 import { calculateSplit } from './lib/split';
 import { AdMaxAd } from './components/AdMaxAd';
+import { OrganizerLink } from './components/OrganizerLink';
 
 export default function App() {
   const form = useSplitForm();
@@ -116,8 +117,11 @@ export default function App() {
           )}
         </section>
 
+        {/* 幹事モードへの導線。広告より前、結果のあとに置く。 */}
+        <OrganizerLink />
+
         {/*
-          将来の広告枠はこの下（結果とフッターの間）に置く。
+          広告枠は結果とフッターの間に置く。
           計算ボタンや結果の操作ボタンから離れているため誤タップしにくく、
           高さを固定すれば CLS も抑えられる。
         */}

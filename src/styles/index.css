@@ -791,6 +791,61 @@ textarea {
   font-size: 12px;
 }
 
+.footer__nav {
+  margin-top: 12px;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 12px;
+}
+
+.footer__links a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+.footer__links [aria-current='page'] {
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+/* 幹事モードへの導線（トップページ） */
+.crossLink {
+  margin-top: 24px;
+  padding: 14px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper-soft);
+}
+
+.crossLink__title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.crossLink__text {
+  margin-top: 4px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.crossLink__button {
+  display: inline-block;
+  min-height: 44px;
+  margin-top: 10px;
+  padding: 11px 16px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
 .footer__brand {
   margin-top: 12px;
   font-size: 12px;

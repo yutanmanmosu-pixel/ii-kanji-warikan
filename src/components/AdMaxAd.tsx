@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const ADMAX_ID = '9b554083264d8d6e28f4c82547ab05c3';
+const ADMAX_ID = '44402923a5bbda4d92fa083e464ba783';
 
 type AdMaxWindow = Window & {
   admaxads?: Array<{

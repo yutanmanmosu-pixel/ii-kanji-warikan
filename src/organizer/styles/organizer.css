@@ -1,0 +1,748 @@
+/* =========================================================
+   幹事モード（/organizer/）専用スタイル
+   トップページの index.css を読み込んだうえで、差分だけをここに置く。
+   変数・ボタン・入力欄などはトップページと共有している。
+   ========================================================= */
+
+.page--organizer {
+  max-width: 620px;
+}
+
+/* ---------- ヘッダー ---------- */
+
+.orgHeader {
+  padding: 14px 0 10px;
+}
+
+.orgHeader__brand {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+.orgHeader__title {
+  margin-top: 2px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.orgHeader__lead {
+  margin-top: 4px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.orgHeader__back {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+/* ---------- 共通のかたまり ---------- */
+
+.orgSection {
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+
+.orgSection__title {
+  margin-bottom: 10px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.orgSection__title--sub {
+  margin-top: 18px;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.orgHint {
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.orgHint--tight {
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.orgStatus {
+  min-height: 20px;
+  margin-top: 8px;
+  color: var(--ok);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.orgNotice {
+  margin-top: 12px;
+}
+
+.orgBack {
+  margin: 10px 0 4px;
+}
+
+.orgInput {
+  width: 100%;
+  height: 46px;
+  padding: 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper);
+  /* 16px 未満だと iOS Safari が自動ズームするため下げない */
+  font-size: 16px;
+}
+
+.orgInput--title {
+  height: 50px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.orgInput::placeholder {
+  color: #9a9b9f;
+}
+
+.orgSelect {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 44px;
+  padding: 0 8px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper);
+  font-size: 15px;
+}
+
+/* ---------- 飲み会の一覧 ---------- */
+
+.orgList {
+  padding-bottom: 8px;
+}
+
+.orgCard {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper-soft);
+}
+
+.orgCard__title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.orgEvents {
+  display: grid;
+  gap: 10px;
+}
+
+.orgEvent {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.orgEvent__open {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  min-height: 44px;
+  padding: 4px 0;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.orgEvent__name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-strong);
+  overflow-wrap: anywhere;
+}
+
+.orgEvent__meta {
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.orgEvent__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- ボタンのラベル（意図しない位置で改行させない） ---------- */
+
+/*
+ * 日本語はどこでも改行できてしまうので「ダウン / ロード」のように割れる。
+ * 意味のまとまりを nowrap の塊にし、その間だけ <wbr> で改行を許す。
+ * 幅が足りれば1行、足りなければ意図した位置だけで2行になる。
+ */
+.btnLabel {
+  display: inline-block;
+  /* 念のため、span で囲っていない語も途中で割れにくくする */
+  word-break: keep-all;
+  line-height: 1.4;
+}
+
+.btnLabel__part {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* ---------- Excelでの一括登録カード（上部の補助カード） ---------- */
+
+.orgExcelCard {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper-soft);
+}
+
+.orgExcelCard__title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.orgExcelCard__lead {
+  margin-top: 6px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.orgExcelCard__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/*
+ * 幅が足りるPCでは横並び、足りないスマホでは自動で縦並びになる。
+ * 220px を下限にすることで、文字を詰め込みすぎない幅を確保する。
+ */
+.orgExcelCard__actions .button {
+  flex: 1 1 220px;
+  min-width: 0;
+  background: var(--paper);
+}
+
+.orgExcelCard__note {
+  margin-top: 10px;
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ---------- 集金状況 ---------- */
+
+.orgSummary {
+  padding: 16px;
+  margin-top: 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper-soft);
+}
+
+.orgSummary__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.orgSummary__head .orgSection__title {
+  margin-bottom: 0;
+}
+
+.orgSummary__people {
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.orgSummary__count {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 「精算完了 2 / 4人」の右に出る要対応バッジ */
+.orgSummary__action {
+  margin-left: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--warn-soft);
+  color: var(--warn);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.orgSummary__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.orgSummary__item {
+  padding: 8px;
+  border-radius: 8px;
+  background: var(--paper);
+  text-align: center;
+}
+
+.orgSummary__item dt {
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.orgSummary__item dd {
+  margin: 2px 0 0;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.orgSummary__item--ok dd {
+  color: var(--ok);
+}
+
+.orgSummary__item--warn dd {
+  color: var(--danger);
+}
+
+.orgSummary__done {
+  margin-top: 10px;
+  color: var(--ok);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ---------- 名簿 ---------- */
+
+.orgAdd {
+  display: flex;
+  gap: 8px;
+}
+
+.orgAdd__input {
+  flex: 1 1 auto;
+}
+
+.orgAdd__button {
+  flex: 0 0 auto;
+  min-height: 46px;
+}
+
+.orgFilter {
+  margin: 12px 0;
+}
+
+.orgPeople {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.orgPerson {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+/* 回収済みは色だけでなく左の帯でも分かるようにする */
+.orgPerson.is-collected {
+  border-color: var(--ok);
+  border-left-width: 5px;
+  background: #f4faf6;
+}
+
+.orgPerson__top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.orgPerson__name {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 42px;
+  padding: 0 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.orgPerson__name::placeholder {
+  color: #9a9b9f;
+  font-weight: 400;
+}
+
+.orgPerson__amount {
+  flex: 0 0 auto;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.orgPerson__absent {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.orgPerson__controls {
+  display: flex;
+  gap: 8px;
+}
+
+.orgPerson__note {
+  color: var(--warn);
+  font-size: 12px;
+}
+
+.orgPerson__memo {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper);
+  font-size: 16px;
+}
+
+.orgPerson__footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.orgPerson__spacer {
+  flex: 1 1 auto;
+}
+
+.orgIconButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.orgIconButton:disabled {
+  border-color: var(--line);
+  color: #b7b8bc;
+  cursor: not-allowed;
+}
+
+/* 集金チェックは指で押しやすい大きさにする */
+.orgCollect {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper-soft);
+  cursor: pointer;
+}
+
+.orgCollect input {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  flex: 0 0 auto;
+  accent-color: var(--ok);
+}
+
+.orgCollect__label {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.orgCollect__time {
+  margin-left: auto;
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+/* 固定額の入力欄（徴収方法が固定額のときだけ出る） */
+.orgFixed {
+  display: grid;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  background: var(--paper-soft);
+}
+
+.orgFixed__label {
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.orgFixed__field {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  max-width: 200px;
+  padding: 4px 12px 6px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.orgFixed__field:focus-within {
+  border-color: var(--accent);
+}
+
+.orgFixed__input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  padding: 0;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.orgFixed__input:focus {
+  outline: none;
+}
+
+.orgFixed__unit {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* 名前検索 */
+.orgSearch {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.orgSearch__input {
+  width: 100%;
+  height: 46px;
+  padding: 0 44px 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper);
+  /* 16px 未満だと iOS Safari が自動ズームするため下げない */
+  font-size: 16px;
+}
+
+.orgSearch__input::placeholder {
+  color: #9a9b9f;
+}
+
+/* iOS標準の検索クリアボタンと二重にならないよう隠す */
+.orgSearch__input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.orgSearch__clear {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: var(--radius);
+  background: none;
+  color: var(--ink-soft);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* 設定が矛盾していて計算できないときの表示 */
+.orgSummary__invalid {
+  margin-top: 8px;
+}
+
+/* 差額が出たときだけ出る帯 */
+.orgDiff {
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--warn);
+  border-radius: var(--radius);
+  background: var(--warn-soft);
+}
+
+.orgDiff__text {
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.orgDiff__badge {
+  display: inline-block;
+  margin-left: 6px;
+  color: var(--warn);
+  font-weight: 700;
+}
+
+.button--small {
+  min-height: 40px;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.orgCollect.is-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.orgSummary__warn {
+  margin-top: 8px;
+  color: var(--warn);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+/* ---------- 操作・Excel ---------- */
+
+.orgActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.orgActions .button {
+  flex: 1 1 180px;
+  min-width: 0;
+}
+
+.orgImport {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper-soft);
+}
+
+.orgImport__ready {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.orgImport__error {
+  margin-bottom: 8px;
+  color: var(--danger);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.orgImport__list {
+  margin-bottom: 10px;
+  padding-left: 18px;
+  list-style: disc;
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ---------- 割合の調整 ---------- */
+
+.orgWeightsToggle {
+  margin-top: 18px;
+}
+
+.orgWeights {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  background: var(--paper-soft);
+}
+
+.orgWeights__row {
+  display: grid;
+  gap: 4px;
+}
+
+.orgWeights__label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.orgWeights__value {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- プライバシー表示 ---------- */
+
+.orgPrivacy {
+  margin-top: 20px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  background: var(--paper-soft);
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ---------- 画面幅の調整 ---------- */
+
+@media (min-width: 600px) {
+  .orgHeader__title {
+    font-size: 26px;
+  }
+
+  .orgPerson {
+    padding: 14px 16px;
+  }
+}
